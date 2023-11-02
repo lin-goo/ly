@@ -15,5 +15,4 @@ tests/
 nacos-data/
 settings_nacos.py
 *.sqlite3
-*.http
 *.json

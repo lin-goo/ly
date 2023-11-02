@@ -1,0 +1,43 @@
+# 记录列表
+GET {{host}}/api/records/
+###
+
+# 记录详情
+GET {{host}}/api/records/1
+###
+
+# 增加记录
+POST {{host}}/api/records/
+Content-Type: application/json
+
+{
+	"user_id": 1,
+	"category_type": "行为异常",
+	"category_content": "咬手指",
+	"create_at": "2023-11-01 11:11:11"
+}
+
+###
+
+# 学生列表
+GET {{host}}/api/students/
+###
+
+# 学生详情
+GET {{host}}/api/students/1
+###
+
+# 删除学生（软删除）
+DELETE {{host}}/api/students/1
+###
+
+# 增加学生
+POST {{host}}/api/students/
+Content-Type: application/json
+
+{
+  "name": "张三",
+  "gender": 1,
+  "birthday": "2022-01-01"
+}
+###

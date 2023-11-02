@@ -1,8 +1,21 @@
 from datetime import datetime
 
+import django_filters
 from rest_framework import generics
 from rest_framework import serializers
 from records.models import Records
+
+
+class RecordsFilter(django_filters.FilterSet):
+
+    user_id = django_filters.NumberFilter(lookup_expr="exact")
+    category_type = django_filters.CharFilter(lookup_expr="contains")
+    start_time = django_filters.DateTimeFilter(field_name="created_at", lookup_expr="gte")
+    end_time = django_filters.DateTimeFilter(field_name="created_at", lookup_expr="lte")
+
+    class Meta:
+        model = Records
+        fields = ["name", "gender", "created_at"]
 
 
 class RecordsSerializer(serializers.ModelSerializer):
